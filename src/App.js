@@ -6,7 +6,7 @@ import { ElementTypeSelector } from "./ElementTypeSelector";
 import { ElementWithFilter } from "./ElementWithFilter";
 
 export default function App() {
-  const [filter, setFilter] = useState(filters.none);
+  const [filter, setFilter] = useState(filters["Green Screen"]);
   const [elementType, setElementType] = useState("webcam");
   const [isActive, setIsActive] = useState(true);
   return (
