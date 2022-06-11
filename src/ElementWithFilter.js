@@ -28,7 +28,8 @@ export function ElementWithFilter({ filter, elementType }) {
           style={{
             filter: `url(#filter)`,
             width: 640,
-            height: 480
+            maxWidth: "100%",
+            height: "auto"
           }}
           width="640px"
           height="480px"

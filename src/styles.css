@@ -1,7 +1,15 @@
 html,
-body {
+body,
+#root,
+.app {
   background: black;
   height: 100%;
+}
+
+.app {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 video {
@@ -15,6 +23,7 @@ video {
   overflow: hidden;
   height: 480px;
   width: 640px;
+  max-width: 100%;
 }
 .container:hover .filter-strip {
   opacity: 0.9;

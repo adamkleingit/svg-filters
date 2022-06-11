@@ -10,33 +10,35 @@ export default function App() {
   const [elementType, setElementType] = useState("webcam");
   const [isActive, setIsActive] = useState(true);
   return (
-    <div className="app">
-      <div className="container">
-        <button
-          className="preview"
-          checked={isActive}
-          onMouseDown={() => setIsActive(false)}
-          onMouseUp={() => setIsActive(true)}
-          onMouseOut={() => setIsActive(true)}
-        >
-          <span role="img" aria-label="Hide">
-            👁️
-          </span>
-        </button>
+    <>
+      <div className="app">
+        <div className="container">
+          <button
+            className="preview"
+            checked={isActive}
+            onMouseDown={() => setIsActive(false)}
+            onMouseUp={() => setIsActive(true)}
+            onMouseOut={() => setIsActive(true)}
+          >
+            <span role="img" aria-label="Hide">
+              👁️
+            </span>
+          </button>
 
-        <ElementTypeSelector
-          elementType={elementType}
-          setElementType={setElementType}
-        />
-        <ElementWithFilter filter={filter} elementType={elementType} />
+          <ElementTypeSelector
+            elementType={elementType}
+            setElementType={setElementType}
+          />
+          <ElementWithFilter filter={filter} elementType={elementType} />
 
-        <FilterSelector filter={filter} setFilter={setFilter} />
+          <FilterSelector filter={filter} setFilter={setFilter} />
+        </div>
       </div>
       {isActive && (
-        <svg width="500" height="500" viewBox="0 0 500 500">
+        <svg width="0" height="0">
           {filter.component && <filter.component />}
         </svg>
       )}
-    </div>
+    </>
   );
 }
